@@ -1,6 +1,7 @@
 FROM node:14
-WORKDIR /usr/src/app
-COPY package*.json ./
+ENV APP_HOME /usr/src/app
+WORKDIR $APP_HOME
+COPY package.json ./
 RUN npm install
-COPY . .
+COPY . . 
 CMD [ "npm", "start" ]
